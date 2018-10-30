@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let field of fields">
+      <a [routerLink]="field.link">
+        <mat-card class="field-card">
+          <div class="image-container">
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <div class="field-overlay" [ngStyle]="{'background-color': field.color }">
+            </div>
+            <mat-icon fxFlexAlign="auto">{{ field.icon }}</mat-icon>
+          </div>
+          <mat-card-content>
+            <h3>{{ field.name | titlecase }}</h3>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </div>
+  </div>
+</div>
+

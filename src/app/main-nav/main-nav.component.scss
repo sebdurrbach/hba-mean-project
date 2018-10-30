@@ -1,0 +1,52 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: auto;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  transition: .3s;
+  z-index: 100;
+}
+
+.nav-row {
+  position: relative;
+}
+
+#sideToolbar {
+  cursor: pointer;
+}
+
+.shrink-toolbar {
+  height: 48px;
+}
+
+.nav-home {
+  font-size: 1rem;
+  position: absolute;
+}
+
+.home-icon {
+  margin-right: 5px;
+  font-size: 1.4rem;
+  line-height: 0.9;
+}
+
+.nav-social {
+  position: absolute;
+  right: 0;
+}
+
+.social-icon {
+  min-width: 0;
+}
+
+fa-icon {
+  font-size: 18px;
+}
+
+

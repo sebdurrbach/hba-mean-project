@@ -1,0 +1,32 @@
+<div class="header" fxLayout="column" fxLayoutAlign="center center" [ngStyle]="{background: header.background}">
+  <div class="container">
+    <h1>{{ header.title | uppercase }}</h1>
+    <p>{{ header.subtitle }}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-3" *ngFor="let product of products">
+      <a [routerLink]="product?.linkname">
+        <mat-card class="product-card">
+          <div class="image-container">
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <div class="product-overlay" [ngStyle]="{'background-color': 'black' }">
+            </div>
+          </div>
+          <mat-card-content>
+            <h3>{{ product?.name }}</h3>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, explicabo eum? Et, magnam quas! Suscipit laborum eum expedita, similique error reprehenderit aliquam libero aperiam ullam quam consectetur ipsam provident perferendis tenetur quisquam cum nesciunt harum? Temporibus doloremque autem ad iste illum culpa nihil obcaecati, nam possimus quae dolore deserunt? Praesentium!</p>
+      <p>Accusamus veritatis harum id at quia! Eveniet, sapiente neque asperiores similique doloribus dolore voluptatum amet alias? Minus pariatur, magnam atque numquam porro ipsam harum mollitia, voluptates voluptatibus quos, corporis nesciunt et aliquid beatae quae eaque rem. Aut, ipsum nulla minima corrupti id repellat dolores totam veniam laborum quos sapiente quia.</p>
+    </div>
+  </div>
+</div>

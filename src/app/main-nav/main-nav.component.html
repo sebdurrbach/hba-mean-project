@@ -1,0 +1,95 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="'over'" [opened]="false" [autoFocus]="false">
+    <mat-toolbar id="sideToolbar" color="primary" (click)="difclose()" [ngClass]="{'shrink-toolbar': shrinkToolbar}">
+      <mat-icon class="mr-3">close</mat-icon>Fermer
+    </mat-toolbar>
+    <mat-nav-list>
+      <a routerLink="/accueil" (click)="difclose()">
+        <mat-list-item>
+          <a matLine>Accueil</a>
+          <mat-icon class="ml-3">home</mat-icon>
+        </mat-list-item>
+      </a>
+      <a (click)="toggleSides(sideInnovations, sideServices)">
+        <mat-list-item>
+          <a matLine>Innovations</a>
+          <mat-icon class="ml-3">keyboard_arrow_down</mat-icon>
+        </mat-list-item>
+      </a>
+      <mat-accordion displayMode="flat">
+        <mat-expansion-panel [hideToggle]="true" #sideInnovations>
+          <mat-nav-list>
+            <mat-list-item *ngFor="let link of innovationsLinks">
+              <a matLine routerLink="/innovations/{{ link.name }}" (click)="difclose()">{{ link.name | titlecase }}</a>
+              <mat-icon class="ml-3">{{ link.icon }}</mat-icon>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <a (click)="toggleSides(sideServices, sideInnovations)">
+        <mat-list-item>
+          <a matLine>Services</a>
+          <mat-icon class="ml-3">keyboard_arrow_down</mat-icon>
+        </mat-list-item>
+      </a>
+      <mat-accordion displayMode="flat">
+        <mat-expansion-panel [hideToggle]="true" #sideServices>
+          <mat-nav-list>
+            <mat-list-item *ngFor="let link of servicesLinks">
+              <a matLine routerLink="/services/{{ link.name }}" (click)="difclose()">{{ link.name | titlecase }}</a>
+              <mat-icon class="ml-3">{{ link.icon }}</mat-icon>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content cdkScrollable id="supercontainer">
+    <mat-toolbar class="top-nav" [class.mat-elevation-z8]="true" color="primary" [ngClass]="{'shrink-toolbar': shrinkToolbar}">
+      <div class="container">
+        <div class="row nav-row">
+          <a mat-button routerLink="/accueil" class="nav-home">
+            <mat-icon class="home-icon">home</mat-icon>
+            {{ "Hosted by Africa" | uppercase }}
+          </a>
+          <span fxFlex></span>
+          <div fxHide.lt-md>
+            <button mat-button [matMenuTriggerFor]="menuInnovation">
+              {{ "innovations" | uppercase }}
+            </button>
+            <mat-menu #menuInnovation="matMenu" overlapTrigger="false">
+              <a mat-menu-item *ngFor="let link of innovationsLinks" routerLink="/innovations/{{link.name}}">
+                <mat-icon>{{ link.icon }}</mat-icon>
+                <span>{{ link.name | titlecase }}</span>
+              </a>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="menuServices">
+              {{ "services" | uppercase }}
+            </button>
+            <mat-menu #menuServices="matMenu" overlapTrigger="false">
+              <a mat-menu-item *ngFor="let link of servicesLinks" routerLink="/services/{{link.name}}">
+                <mat-icon>{{ link.icon }}</mat-icon>
+                <span>{{ link.name | titlecase }}</span>
+              </a>
+            </mat-menu>
+            <a mat-button routerLink="/apropos">{{ "A propos" | uppercase }}</a>
+          </div>
+          <span fxFlex></span>
+          <div fxHide.lt-md class="nav-social">
+            <a mat-button class="social-icon">
+              <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+            </a>
+            <a mat-button class="social-icon">
+              <fa-icon [icon]="['fab', 'facebook-f']"></fa-icon>
+            </a>
+          </div>
+          <button fxHide fxShow.lt-md="true" type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

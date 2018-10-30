@@ -1,0 +1,61 @@
+<div class="header" fxLayout="column" fxLayoutAlign="center center" [ngStyle]="{background: header.background}">
+  <div class="container">
+    <h1>{{ header.title | uppercase }}</h1>
+    <p>{{ header.subtitle }}</p>
+  </div>
+</div>
+<div class="container services-section">
+  <div class="row">
+    <mat-tab-group color="accent" dynamicHeight [selectedIndex]="tabSelected" (selectedTabChange)="updateLink($event)"
+      fxFlex="80%" fxFlexOffset="10%">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <h3>Entreprises</h3>
+        </ng-template>
+        <ng-template matTabContent>
+          <div class="tab-content">
+            <h2>{{ "Nos offres entreprises" | uppercase }}</h2>
+            <h3>Nous vous accompagnons au plus près dans une expérience de co-innovation</h3>
+            <p>A Hosted by Africa, nous valorisons les effets de synergie qui éclosent au sein de notre studio
+              d’innovation pour faire émerger de nouvelles technologies selon un processus de co-création et de
+              mutualisation des ressources et compétences.</p>
+            <p>A l’heure actuelle, la révolution numérique édicte un rythme effréné où les entreprises deviennent de
+              plus en plus intelligentes, efficaces, automatisées, et impose une approche d’innovation permanente pour
+              rester dans la course. Or, dans le contexte de crise actuelle, difficile pour les PME d'assumer seules
+              tous les risques financiers générés par une telle démarche.</p>
+            <p>La co-innovation représente un véritable levier d’innovation pour votre entreprise. Elle vous permet
+              d’accéder aux savoirs-faire, compétences et à la créativité de nos startups pour développer, dans un
+              cadre collaboratif, des produits ou des solutions répondant à des problématiques précises.</p>
+            <p>Nous mettrons en place une équipe chargée de définir avec vous une stratégie d’innovation selon une
+              démarche rigoureuse et cadrée.</p>
+          </div>
+        </ng-template>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <h3>Startups</h3>
+        </ng-template>
+        <ng-template matTabContent>
+          <div class="tab-content">
+            <h2>{{ "Nos offres startups" | uppercase }}</h2>
+            <h3>Nous investissons dans votre innovation</h3>
+            <p>Quand on est une startup, développer un produit ou un service pertinent et adapté est très compliqué. Le commercialiser encore bien plus! Car en plus de devoir trouver le bon marché, il faut disposer à la fois du budget marketing et des ressources humaines nécessaires, ce qui n’est pas toujours le cas.</p>
+            <p>Pour les startups qui disposent de fonds pour se développer hors de leurs frontières, le piège d’une internationalisation trop rapide est bien souvent de semer à tous vents, sans disposer de connaissances suffisantes sur les marchés locaux, en espérant vainement que le produit s’implante. Il est nécessaire de prioriser un petit nombre de marchés cibles pour mieux optimiser son impact.</p>
+            <h3>Nous offrons réflexion stratégique, expertise commerciale, réseau et capital</h3>
+            <p>Grâce à une équipe d’entrepreneurs passionnés et créatifs et à notre large réseau, nous vous donnons accès aux marchés africain et permettons une implantation stratégique et réfléchie en 4 étapes :</p>
+            <ul>
+              <li>Identification du marché adéquat pour votre produit ou service</li>
+              <li>Test et validation de l’adéquation produit-marché selon une approche lean-startup</li>
+              <li>Elaboration d’une stratégie commerciale et d’un plan marketing</li>
+              <li>Financement de la campagne commercialisation</li>
+            </ul>
+            <p>A Hosted By Africa, nous allons plus loin que les incubateurs, technopoles, pépinières et autres lieux d’aide à l’entrepreneuriat ou d’orientation stratégique des investisseurs. Nous entrons au coeur des projets que nous accompagnons et nous intervenons de manière opérationnelle dans la vie des startups que nous aidons à exploiter leur plein potentiel.</p>
+            <h3>Nous voyons plus loin!</h3>
+            <p>Mais ce n’est pas tout, nous sommes aussi des « builders ». Nous avons pour ambition de devenir la plus grande entreprise technologique du continent africain en systématisant la création de startups innovantes et en devenant un véritable laboratoire d’innovation. En travaillant avec les startups, nous avons réalisé que les expériences et compétences que nous partageons sont un atout majeur qui peuvent contribuer à l’émergence de synergies fructueuses et de nouveaux projets. En ce sens, nous concevrons, avec les entrepreneurs de notre portfolio, de nouvelles idées de startups que l’on développera et déploiera en mutualisant les ressources disponibles et en tirant parti de l’expérience et des processus que nous avons développé jusqu’à présent.</p>
+            <p>Entrepreneurs du monde entier, vous avez créé un produit ou service innovant répondant aux défis majeurs des économies africaines, vous souhaitez contribuer à la transition numérique de l’Afrique dans une dynamique d’innovation, alors parlons-en !</p>
+          </div>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
